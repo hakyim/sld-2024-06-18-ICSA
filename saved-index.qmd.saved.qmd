@@ -8,80 +8,74 @@ format:
     theme: [simple,theme/mystyle.scss]
     echo: true
 editor: source
+freeze: true
+pdf-separate-fragments: true
 ---
+# {.title-slide visibility=hidden}
 
-# On the Problem of Inflation in TWAS {background-color="white"}
+<!-- begin ----------------------------- -->
+# Leveraging deep learning models to enable prediction of omics data in low power settings {background-color="white"}
 <br>
 
-<h2>STATGEN 2024, Pittsburgh</h2>
+<h2> ICSA 2024, Nashville</h2>
 
-<!-- <h4>Session: Identification of causal molecular phenotypes underlying complex diseases using multi-omics QTL data</h4> -->
+<h3>2024-06-18 Wednesday</h3> 
 
-<h3>2023-05-01 Wednesday</h3>
+<h3>Hae Kyung Im</h3>   
+<!-- end ----------------------------- -->
 
-<h3>Hae Kyung Im</h3>
+<!-- begin ----------------------------- -->
+## Why do we want to predict omics traits from genotype? {.nostretch 
+background-image=assets/slide-background.svg}
+
+. . . 
+
+<br>
+To explain mechanisms of GWAS loci
+
+. . . 
+
+GWAS discoveries continue to grow but causal genes are not known
+
+![](assets/gwas-catalog-2024-04-10.png){width=50%}
+
+. . .  
+
+288,566 SNP/trait pairs from 5,604 studies as of 4/2024.
+<!-- <small>downloaded April 2024 from GWAS Catalog </small> -->
+
+<!-- end ----------------------------- -->
 
 
-<!-- # Review of TWAS  {background-color="white"} -->
-
-## What is TWAS?{.nostretch background-image=assets/slide-background.svg}
-
-- It's a method that tries to identify causal genes of GWAS loci
-
-## GWAS Continues to Discover more Loci {.nostretch background-image=assets/slide-background.svg}
-
-![](assets/gwas-catalog-2024-04-10.png){width=70%}
-
-::: aside
-downloaded April 2024
-:::
-
-## Mostly noncoding so mechanism not well known {background-image=assets/slide-background.svg}
+<!-- begin ----------------------------- -->
+## TWAS uses GWAS data to find genes associated with trait {background-image=assets/slide-background.svg}
 
 ![](assets/gwas-predixcan-diagram){width=1200}
 
 ::: {.absolute bottom=0 left=0 .fragment .fade-out}
 ![](assets/blank-rectangle.png){width="1600" height="380" fig-alt="blank"}
 :::
+<!-- end ----------------------------- -->
 
 
-
-:::{.absolute bottom=200 left=1200 .fragment .fade-in}
-:::{.fragment .fade-out}
-
-- RNA-Seq is too expensive
-- Many tissues such has brain, pancreas, etc are not accessible
-- Differentially expressed genes can be consequence of disease status
-
-:::
-:::
-
-::: {.absolute bottom=0 left=0 .fragment .fade-out}
-![](assets/blank-rectangle.png){width="370" height="440" fig-alt="blank"}
-:::
-
-::: {.absolute bottom=260 left=360 .fragment .fade-out}
-![](assets/blank-rectangle.png){width="110" height="30" fig-alt="blank"}
-:::
-
-::: {.absolute bottom=210 left=720 .fragment .fade-out}
-![](assets/blank-rectangle.png){width="210" height="50" fig-alt="blank"}
-:::
-
+<!-- begin ----------------------------- -->
 ## Gene expression can be predicted from genotype {background-image=assets/slide-background.svg}
 
 ![](assets/reference-transcriptome-gtex.png)
 
+<!-- begin ----------------------------- -->
 ## Some genes are very well predicted {background-image=assets/slide-background.svg}
 
 ![](assets/performance-top-genes.png)
 
+<!-- begin ----------------------------- -->
 ## Accuracy of prediction depends on heritability {.nostretch  background-image=assets/slide-background.svg}
 
 ![](assets/performance-all-genes.png){width=75%}
 
 
-## Advantages of gene level associations {background-image=assets/slide-background.svg}
+<!-- begin ----------------------------- -->
+## Advantages of gene level associations {background-image=assets/slide-background.svg }
 
 - Reduced multiple testing burden (from 10e6 to 10e4)
 - The function of genes are much better annotated than SNPs
@@ -90,24 +84,35 @@ downloaded April 2024
 - It provides the direction of effects, i.e. whether up or down regulation of a gene - increases the risk of a disease
 - The candidate causal gene is a good target for drug development
 
-## PrediXcan results identify drug repositioning candidates {.nostretch background-image=assets/slide-background.svg}
+<!-- begin ----------------------------- -->
+## PrediXcan results identify drug repositioning candidates {
+.nostretch 
+background-image=assets/slide-background.svg 
+}
 
 ![](assets/so-drug-repurposing.png){width=75%}
 
 :::aside
 So et al, Nature Neuroscience 2017
 ::: 
+<!-- end ----------------------------- -->
 
-## PrediXcan Results Are Predictive of Drug Target Success  {background-image=assets/slide-background.svg}
+<!-- begin ----------------------------- -->
+## PrediXcan Results Are Predictive of Drug Target Success {
+background-image=assets/slide-background.svg}
 
-![](assets/successful-drugs-higher-twas-signal.png)
+![](assets/successful-drugs-higher-twas-signal.png){width=65%}
+<!-- end ----------------------------- -->
 
-## Limitations of TWAS  {background-image=assets/slide-background.svg visibility=hidden}
+<!-- begin ----------------------------- -->
+## Limitations of TWAS  {
+background-image=assets/slide-background.svg 
+visibility=hidden
+}
 
 :::{.columns}
 
 :::{.column width=75%}
-
 
 - Not very good at predicting low heritability genes which are more likely to be disease relevant
 - Predictions don’t transfer well across ancestries
@@ -116,365 +121,438 @@ So et al, Nature Neuroscience 2017
 
 :::
 :::
-
-## Extension of TWAS to other mediating traits {background-image=assets/slide-background.svg .nostretch }
-
-![](assets/omnixcan.png){width=100%}
+<!-- end ----------------------------- -->
 
 
-# Is there inflation in \*WAS?  {background-color="white"}
+<!-- begin ----------------------------- -->
+## Limitations of TWAS {background-image=assets/slide-background.svg .nostretch }
 
-## Leeuw et al report (2023) inflation in TWAS  {background-image=assets/slide-background.svg}
+<br><br>
 
-![](assets/leeuws-twas-inflation.png){width=75%}
+::::{.columns}
 
-## Why should we worry about inflation? {background-image=assets/slide-background.svg}
+:::{.column width="70%"}
 
-. . .
-
+- bulk RNA may not reveal disease relevant regulation
 <br>
 <br>
 
-<center>
-
-because none of the *WAS results would be valid
-
-</center>
-
-## Hey, type I error is important but I care more about power  {background-image=assets/slide-background.svg}
-
-
-. . .
-
+- context-specific regulation is likely to be more relevant
 <br>
 <br>
 
-<center> A reviewer actually wrote this </center>
-
-. . .
-
-<br> 
-<br> 
-<center> We will offer them a magical test with 100% power
-<br> 
-<br> 
-just reject the null every time </center>
-
-  
-
-## Check inflation via simulations {background-image=assets/slide-background.svg}
-
-:::{.columns}
-  
-:::{.column width=50%}
-  
-<br>
-TWAS model
-<br>
-
-$$  Y = \beta ~ T +  \epsilon_\text{twas} $$
-
-$$  T = \sum_k \gamma_k ~ X_k $$
-
-
-```{r simulation}
-beta = 0
-N = 1000
-M = 999
-maf=0.4
-epsilon = rnorm(N)
-gamma = rnorm(M)
-X = matrix(rbinom(N*M,2,maf),N,M)
-T = X %*% gamma 
-Y = beta * T + epsilon
-```
+- transcription factor binding alteration may affect disease
 
 :::
 
-:::{.column width=50%}
-
-:::
-
-:::
-
-## Leeuw et al’s "reformulated null hypothesis {background-image=assets/slide-background.svg}
-
-
-:::{.columns}
-  
-:::{.column width=90%}
-  
-
-$$  Y = \beta ~ T +  \epsilon_\text{twas} $$
-$$  T = \sum_k \gamma_k ~ X_k $$
-
-<!-- ![](assets/leeuws-null-hypothesis.png){width=100%} -->
-
-:::
-:::
-
-## What is wrong with Leeuw et al's reformulated hypothesis? {background-image=assets/slide-background.svg}
-
-<br>
-
-$$H_0\!:~ \beta = 0$$
-
-
-$$H_0\!:~ \frac{\text{cov}(\hat{T}, Y)}{\text{var}(\hat{T})}  = 0$$
-$$H_0\!:~ \hat\beta = 0$$
+:::{.column width="30%"}
 
 :::{.fragment}
+- scPrediXcan
 <br>
 <br>
-$$H_0\!:~ \hat{\beta}  = 0$$
+
+- context-Xcan
+<br>
+<br>
+
+- TFXcan
 :::
-
-
-## Take home message {background-image=assets/slide-background.svg}
-<br>
-<br>
-
-::: {.r-fit-text}
-Null hypothesis should not be based on a random variable
-:::
-
-. . .
-
-Even worse: This event has probability 0.
-
-
-## Leeuws et al claim that error in variable causes inflation {background-image=assets/slide-background.svg}
-
-:::{.columns}
-
-:::{.column width=60%}
-
-
-We want to regress $Y$ on $T$
-$$  Y = \beta ~ T +  \epsilon_\text{twas} $$
-  
-  
-$$  T = \sum_k \gamma_k ~ X_k $$
-
-
-But we only have the noisy version of $T$, $\tilde{T} = \sum_k \tilde{\gamma}_k ~ X_k$ 
-and we end up regressing $Y$ on $\tilde{T}$
-
-<br>
-
-$$  Y = \beta ~ \tilde{T} +  \tilde\epsilon $$
-  
-  
-$$  \tilde{T} = \sum_k \tilde{\gamma}_k ~ X_k $$
-
-:::
-:::
-
-## But error in variables literature contradicts that claim {background-image=assets/slide-background.svg}
-
-
-<br>
-<br>
-
-1. No inflation when using noisy explanatory variables
-
-<br>
-
-2. There is attenuation bias 
-$$| E \hat\beta | < |\beta|$$
-
-
-::: aside
-Fuller, Wayne, Measurement Error Models. 1987, John Wiley & Sons
-:::
-
-
-# But their simulations did show inflation {background-color="white"}
-
-## Joint work with {.nostretch background-image=assets/slide-background.svg}
-
-![](assets/yanyu-and-festus.png){width=65%}
-
-## TWAS Model {background-image=assets/slide-background.svg}
-
-\begin{align*}
-  Y &= \beta ~ T +  \epsilon_\text{twas} \\
-  T &= \sum_k \gamma_k ~ X_k 
-\end{align*}
-
-
-<br>
-
-What happens if $Y$ has a polygenic component?
-$$ \epsilon_\text{twas} = \sum_k X_k  ~\delta_k + \epsilon $$
-
-## Example: Single eQTL T and unrelated Y {background-image=assets/slide-background.svg}
-
-:::{.incremental}
-- $\beta = 0~~~~~~~~~~~~~~~~~~~~~~~~ \text{i.e. } T \text{  is unrelated to } Y$ 
-
-- $Y = \sum_k X_k  ~\delta_k +  \epsilon ~~~~~ \text{we assume fully polygenic } Y$  
-- $T = X_1$   
-
-<br>
-
-- what will happen if we regress $Y$ on $T$?
-
-- $T$ will capture the association between $X_1$ and $Y$ 
-
-- for small sample sizes, the effect could be negligible but with biobank-scale data, the association will be significant
-
-- is this a problem?
-
-- we can show that $E\chi^2 = 1 + \frac{N h^2}{M}$
 
 :::
 
-## Example: Single eQTL T and unrelated Y {background-image=assets/slide-background.svg}
-
-![](assets/single-eqtl-example.png)
-
-## We can do the math in more general case {background-image=assets/slide-background.svg}
-
-:::{.incremental}
-
-- $\hat\beta$
-- $\text{var}(\hat\beta)$
-- $Z$
-- $\chi^2 = Z^2$
-
-<br>
-
-:::
+::::
 
 :::{.fragment}
-$$E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})$$
+<br><br>
+[Generating data with sufficient reads and sample sizes is too costly]{style="font-size: 1.3em;"}
+:::
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+# Can deep learning help? {background-color="white"}
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+## Enformer predicts epigenetic features from DNA sequence {background-image=assets/slide-background.svg .nostretch }
+![](assets/enformer-input-output.png){width=75%}
+
+[250 million parameters, 4.6K TPU hours]{style="font-size: 0.7em"}
+
+:::{.absolute right=0 bottom=0}
+[$~~~~~~~~~~~~~~~~$ Avsec et al Nature Methods 2021]{style="font-size: 0.5em"}
+:::
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+## Enformer predicts epigenetic features from DNA sequence {background-image=assets/slide-background.svg .nostretch }
+$~~~~~~$ ![](assets/enformer-track-performance.png){width=85%}
+
+:::{.absolute right=0 bottom=0}
+[$~~~~~~~~~~~~~~~~$ Avsec et al Nature Methods 2021]{style="font-size: 0.5em"}
+:::
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+## Enformer trained to perform well across the genome {background-image=assets/slide-background.svg .nostretch }
+$~~~~~~~~~~~~~~~~$ ![](assets/enformer-dimensions-genomic-population-01.png){width=99%}
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+## Enformer trained to perform well across the genome {background-image=assets/slide-background.svg .nostretch }
+$~~~~~~~~~~~~~~~~$ ![](assets/enformer-dimensions-genomic-population-02.png){width=99%}
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+## Enformer trained to perform well across the genome {background-image=assets/slide-background.svg .nostretch }
+$~~~~~~~~~~~~~~~~$ ![](assets/enformer-dimensions-genomic-population-03.png){width=99%}
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+# Can enformer predict variation across individuals?  {background-color="white"}
+<!-- end ----------------------------- -->
+
+
+<!-- begin ----------------------------- -->
+## Enformer can predict variation across individuals - PEX6 {background-image=assets/slide-background.svg .nostretch }
+![](assets/pex6-enformer.png){width=70%}
+
+::: {.absolute bottom=-90 right=-18}
+![](assets/temi-sai.png){width=400}
 :::
 
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+## but correlation can be negative - NUDT2 {background-image=assets/slide-background.svg .nostretch }
+![](assets/nudt2-enformer.png){width=70%}
+
+::: {.absolute bottom=-90 right=-18}
+![](assets/temi-sai.png){width=400}
+:::
+<!-- end ----------------------------- -->
+
+
+
+<!-- begin ----------------------------- -->
+## Personal transcriptome poorly explained {background-image=assets/slide-background.svg .nostretch }
+
+![](assets/enformer-problem-NG.png)
+
+<!-- end ----------------------------- -->
+
+
+<!-- begin ----------------------------- -->
+## Mean correlation across genes vs. across individuals {background-image=assets/slide-background.svg .nostretch }
+
+![](assets/cross-individual-enformer-comparison-huang.png){width=60%}
+
+<!-- end ----------------------------- -->
+
+
+<!-- begin ----------------------------- -->
+## Average correlation hides utility of unsigned of prediction {background-image=assets/slide-background.svg .nostretch }
+
+![](assets/enformer-vs-predixcan.png){width=50%}
+
+:::{.absolute right=0 bottom=0}
+[Huang et al 2023 NG]{style="font-size: 1em"}
+:::
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+## Average correlation hides utility of unsigned of prediction {background-image=assets/slide-background.svg .nostretch }
+
+![](assets/glass_people.png){width=95%}
+
+:::{.absolute right=0 bottom=0}
+[https://what-if.xkcd.com/6/]{style="font-size: 1em"}
+:::
+<!-- end ----------------------------- -->
+
+
+
+
+
+<!-- begin ----------------------------- -->
+
+# scPrediXcan {background-color="white"}
+
+uses single cell data to identify cell-type specific causal genes
+
+<!-- end ----------------------------- -->
+
+
+
+<!-- begin ----------------------------- -->
+## Overview of scPrediXcan Framework {background-image=assets/slide-background.svg .nostretch }
+
+![](assets/scpredixcan-overview.png){width=80%}
+
+<!-- ::: {.absolute bottom=-70 right=-70} -->
+::: {.absolute bottom=0 right=0}
+![](assets/charles-mengjie.png){width=300}
+:::
+<!-- end ----------------------------- -->
+
+
+
+<!-- begin ----------------------------- -->
+## scPrediXcan predicts cell type specific expression {background-image=assets/slide-background.svg .nostretch }
+
+![](assets/scpred-performance-top-genes.png){width=65%}
+
+::: {.absolute bottom=-70 right=-70}
+![](assets/charles-mengjie.png){width=400}
+:::
+<!-- end ----------------------------- -->
+
+
+
+
+
+
+
+<!-- begin ----------------------------- -->
+## scPrediXcan outperforms traditional PrediXcan {background-image=assets/slide-background.svg .nostretch }
+
+![](assets/scpredixcan-t2d.png){width=100%}
+
+::: {.absolute bottom=-70 right=-70}
+![](assets/charles-mengjie.png){width=400}
+:::
+<!-- end ----------------------------- -->
+
+
+
+<!-- begin ----------------------------- -->
+## scPrediXcan identifies more likely type 2 diabetes genes {background-image=assets/slide-background.svg .nostretch visibility=hidden}
+
+![](assets/scPrediXcan-vs-bulk-PrediXcan-causal.png){width=100%}
+
+::: {.absolute bottom=-70 right=-70}
+![](assets/charles-mengjie.png){width=400}
+:::
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+## scPrediXcan outperforms bulk PrediXcan {background-image=assets/slide-background.svg .nostretch  visibility=hidden}
+
+![](assets/scPrediXcan-vs-bulk-PrediXcan-qqplot.png){width=60%}
+
+::: {.absolute bottom=-70 right=-70}
+![](assets/charles-mengjie.png){width=400}
+:::
+<!-- end ----------------------------- -->
+
+
+
+
+
+
+<!-- begin ----------------------------- -->
+## Next steps {background-image=assets/slide-background.svg .nostretch visibility=hidden}
 :::{.incremental}
-- $N ~h^2_\delta ~ \Phi(\text{gene})$ is noncentrality parameter
-- $N$ is the sample size of the GWAS 
-- $h^2_\delta$ is the heritability of $Y$
+
+- cross species integration (Sabrina Mi/UCSD)
+
+- DNA language model training (Henry Raeder rotation project)
+
+- Multi-omic language model training (Rodrigo Bonazzola U Leeds)
+
+- Methylation prediction (Evan Wu Bioinformatics Core et al)
+
+- Summary based mixed effects model (Sabrina Mi)
 :::
+<!-- end ----------------------------- -->
 
-## Let's compare central to noncentral χ2 distributions {background-image=assets/slide-background.svg}
 
-![](assets/central-vs-noncentral-chi2.png)
-
-## What does the inflation factor $\Phi$ look like  {background-image=assets/slide-background.svg}
-
+<!-- begin ----------------------------- -->
+## Conclusions {background-image=assets/slide-background.svg .nostretch }
 :::{.incremental}
-- $\Phi_\text =
- \frac{\tilde\gamma' \cdot \Sigma^2  \cdot \tilde\gamma}{\tilde\gamma' \cdot  \Sigma  \cdot \tilde\gamma} \frac{1}{M}$
 
-- $\frac{1}{M} \le \Phi \le 1$
+- TWAS help us identify causal genes but has limitations
+- Cell type specific predictors can enhance TWAS
+  - but we have small sample sizes and sparse data
+- Deep learning methods allow us train models with limited sample sizes
+- scPrediXcan combines population based and deep learning overcoming the issues of traditional TWAS
 
-- lower bound attained when SNPs are independent
 
-- upper bound attained when SNPs are perfectly correlated
 
-- $\Phi = \frac{\text{tr}(\Sigma^2)}{M^2}$ if mediator is also polygenic
+
+:::
+<!-- end ----------------------------- -->
+
+
+
+<!-- begin ----------------------------- -->
+## Thank you {background-image=assets/slide-background.svg .nostretch }
+![](assets/acknowledgement.png)
+<!-- end ----------------------------- -->
+
+
+
+
+
+
+
+<!-- begin ----------------------------- -->
+
+# TFXcan {background-color="white"}
+
+identifies TFs disrupted by GWAS loci using genetic predictors of TF binding
+
+<!-- end ----------------------------- -->
+
+
+<!-- begin ----------------------------- -->
+## Enpact Method - Training {background-image=assets/slide-background.svg .nostretch }
+
+![](assets/enpact-method.png)
+
+For training, population average is used, 
+so only a handful of samples are needed
+
+<!-- end ----------------------------- -->
+
+
+
+<!-- begin ----------------------------- -->
+## Validation of Enpact prediction compared to observed {background-image=assets/slide-background.svg .nostretch }
+
+![](assets/TF-enpact-vs-observed.png){width=99%}
+
+
+
+::: {.absolute bottom=-90 right=-18}
+![](assets/temi.png){width=200}
+:::
+
+. . . 
+
+[Prediction performance is comparable to population-based method with 130 samples]{style="font-size=2em;"}
+
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+## Validation of Enpact prediction compared to other predictors  {background-image=assets/slide-background.svg .nostretch }
+
+![](assets/enpact-vs-cwas.png)
+
+::: {.absolute top=100 right=10}
+Top site by correlation
 :::
 
 
+::: {.absolute bottom=-90 right=-18}
+![](assets/temi.png){width=200}
+:::
+<!-- end ----------------------------- -->
 
-## Simulated Null χ2 vs theoretical {background-image=assets/slide-background.svg}
 
-:::{.columns}
-:::{.column width=70%}
+<!-- begin ----------------------------- -->
+## Most enpact predictors correlate significantly with CWAS {background-image=assets/slide-background.svg .nostretch }
 
-![](assets/simulated-null-chi2-vs-prediction.png)
+![](assets/TF-enpact-vs-cwas-01.png)
 
+::: {.absolute bottom=-90 right=-18}
+![](assets/temi.png){width=200}
+:::
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+## Enpact CWAS correlation sign is also inconsistent {background-image=assets/slide-background.svg .nostretch }  
+
+![](assets/TF-enpact-vs-cwas-02.png)
+
+::: {.absolute bottom=-90 right=-18}
+![](assets/temi.png){width=200}
+:::
+<!-- end ----------------------------- -->
+
+<!-- begin ----------------------------- -->
+## TFXcan identifies TFBinding associated with disease  {background-image=assets/slide-background.svg .nostretch visibility=hidden}
+![](assets/tfxcan.svg){width=90%}
+
+::: {.absolute bottom=-90 right=-18}
+![](assets/temi.png){width=200}
 :::
 
-:::{.column width=30%}
+<!-- end ----------------------------- -->
 
-<br>
-<br>
 
-$$E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})$$
+<!-- begin ----------------------------- -->
+## AR binding sites associated with prostate cancer risk  {background-image=assets/slide-background.svg .nostretch }
+![](assets/tfxcan-manhattan-2.svg){width=120%}
+
+::: {.absolute bottom=-90 right=-18}
+![](assets/temi.png){width=200}
 :::
 
+<!-- end ----------------------------- -->
+
+
+<!-- begin ----------------------------- -->
+## Concordance with CWAS results  {background-image=assets/slide-background.svg .nostretch  visibility=hidden}
+![](assets/ar-tfxcan-cwas-venn.svg){width=50%}
+
+
+::: {.absolute bottom=-90 right=-18}
+![](assets/temi.png){width=200}
+:::
+<!-- end ----------------------------- -->
+
+
+<!-- begin ----------------------------- -->
+## Preliminary Tenerife plot in Breast Cancer loci  {background-image=assets/slide-background.svg .nostretch }
+
+
+![](assets/ovarian-tfxcan.png){width=120%}
+
+
+
+::: {.absolute bottom=-70 right=-18}
+![](assets/sofia.png){width=200}
 :::
 
-## Null TWAS χ2 vs theoretical {background-image=assets/slide-background.svg}
+:::{.absolute bottom=-60 right=200}
+ [Sofia Salazar]{style="font-size: 0.6em"}
+:::
+<!-- end ----------------------------- -->
 
-:::{.columns}
-:::{.column width=70%}
 
-![](assets/null-twas-chi2.png)
 
+<!-- begin ----------------------------- -->
+## Context specific expression prediction {background-image=assets/slide-background.svg .nostretch visibility=hidden}
+
+![](assets/aracena-data.png)
+[$~~~~~~~~~~~~~~~~$ Aracena et al 2023 NG]{style="font-size: 0.5em"}
+
+
+::: {.absolute bottom=-70 right=-18}
+![](assets/sai.png){width=200}
 :::
 
-:::{.column width=30%}
-
-
-UK Biobank genotype, null phenotype $Y$, and predicted gene expression
-
-$$E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})$$
+:::{.absolute bottom=-60 right=200}
+ [Sai Gona]{style="font-size: 0.6em"}
 :::
+<!-- end ----------------------------- -->
 
-:::
+<!-- begin ----------------------------- -->
+<!-- ## Transcription factor binding prediction (Temidayo Adeluwa){background-image=assets/slide-background.svg .nostretch } -->
 
-## Polygenic Target Trait Y & Noisy Mediator {background-image=assets/slide-background.svg}
-
-$$\begin{align}
-  Y &= \beta \cdot T + \sum_k X_k \cdot \delta_k + \epsilon \\
-  T &= \sum_k \gamma_k \cdot X_k \\
-  \tilde{T} &= \sum_k (\gamma_k + e_{\gamma,k}) \cdot X_k
-\end{align}
-$$
+<!-- ::: {.absolute bottom=-70 right=-18} -->
+<!-- ![](assets/temi.png){width=200} -->
+<!-- ::: -->
+<!-- end ----------------------------- -->
 
 
-<br>
-<br>
 
-$$E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})$$
-
-
-## TWAS χ2 Statistic with Polygenic Y & Noisy Mediator {background-image=assets/slide-background.svg}
-
-$$E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \frac{\Phi(\text{gene})}{1 - \beta^2\tau^2} +  N ~ \frac{\beta^2 }{1 - \beta^2\tau^2}~\tau^2$$
-
-
-$$\tau^2 = \text{signal to noise ratio}$$
-$$ = \text{precision} = \frac{\text{var}(T)}{\text{var}(\tilde{T})}$$
-
-## Alternative χ2 with Polygenic Y and Noisy Mediator {background-image=assets/slide-background.svg}
-
-![](assets/alternative-chi2-polygenic-Y-noisy-T.png)
-
-## Dependence on Precision of Predictor {background-image=assets/slide-background.svg}
-
-![](assets/inflation-vs-precision.png)
-
-## How to Correct the Inflation {background-image=assets/slide-background.svg}
-
-::: {.incremental}
-
-- Calculate the non centrality parameter
-
-- Use noncentral χ2 to compute p-values
-
-- $\texttt{pchisq(chi2, ncp=N*h2Y*phi, df=1, lower.tail=FALSE)}$
-
-:::
-
-## Estimated Factor Φ for Genes, Metabolites, Brain Features  {background-image=assets/slide-background.svg}
-
-![](assets/phi-distribution.png)
-
-
-## Take home message {background-image=assets/slide-background.svg}
-
-:::{.incremental}
-- Standard TWAS can yield inflated p-values
-- The χ2 statistic is noncentral
-- NCP is linear in sample size
-- NCP is linear in the heritability of Y
-- $\Phi$ is a function of the mediator and can be estimated using mediator prediction weights
-- Inflation can be corrected by simply using the noncentral χ2 distribution when calculating the p-values
-:::
-
+<!--  ----------------------------- -->
+<!-- acknowledgements ----------------------------- -->
+<!-- :::{.absolute bottom=-60 right=200} -->
+<!--  [Charles Zhou]{style="font-size: 0.6em"} -->
+<!-- ::: -->
+<!-- end ----------------------------- -->
 
 
